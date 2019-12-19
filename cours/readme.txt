@@ -5,7 +5,7 @@ Se placer à la racine du projet et taper :
 	mvn package
 Ensuite :
 
-	docker run -p 9191:9191 docker-cours:0.0.1-SNAPSHOT
+	docker run -p 9191:8080 docker-cours:0.0.1-SNAPSHOT
 
 Lancer Postman
 
