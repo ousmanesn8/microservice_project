@@ -16,18 +16,19 @@ public class Cours {
     private String nom;
     @Column(name = "semestre")
     private String semestre;
+
     @Column(name = "departement")
     private String departement;
-    @Column(name = "volumehoraire")
-    private int volumehoraire;
+    @Column(name = "volume")
+    private int volume;
 
-    public Cours(String idcours, String idenseignant, String nom, String semestre, String departement, int volumeHoraire) {
+    public Cours(String idcours, String idenseignant, String nom, String semestre, String departement,  int volume) {
         this.idcours = idcours;
         this.idenseignant = idenseignant;
         this.nom = nom;
         this.semestre = semestre;
         this.departement = departement;
-        this.volumehoraire = volumehoraire;
+        this.volume = volume;
     }
 
     public Cours(){
@@ -74,12 +75,12 @@ public class Cours {
         this.departement = departement;
     }
 
-    public int getVolumeHoraire() {
-        return volumehoraire;
+    public int getVolume() {
+        return volume;
     }
 
-    public void setVolumeHoraire(int volumeHoraire) {
-        this.volumehoraire = volumeHoraire;
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     @Override
@@ -90,7 +91,7 @@ public class Cours {
                 ", nom='" + nom + '\'' +
                 ", semestre='" + semestre + '\'' +
                 ", departement='" + departement + '\'' +
-                ", volumeHoraire=" + volumehoraire +
+                ", volumeHoraire=" + volume +
                 '}';
     }
 }

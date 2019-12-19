@@ -21,7 +21,7 @@ class CoursApplicationTests {
         c.setNom("qualite");
         c.setSemestre("s1");
         c.setDepartement("informatique");
-        c.setVolumeHoraire(40);
+        c.setVolume(40);
         cc.ajouterModifierCours(c);
         Assert.isTrue(cc.listCours().size()==2);
     }
@@ -34,7 +34,7 @@ class CoursApplicationTests {
         c.setNom("machine learning");
         c.setSemestre("s1");
         c.setDepartement("informatique");
-        c.setVolumeHoraire(40);
+        c.setVolume(40);
         cc.ajouterModifierCours(c);
         System.out.println(cc.listCours());
         Assert.isTrue(cc.afficherUnCours("c4").getNom().equalsIgnoreCase("machine learning"));
@@ -46,7 +46,7 @@ class CoursApplicationTests {
         Assert.isTrue(cc.afficherUnCours("c1").getNom().equals("qualite"));
         Assert.isTrue(cc.afficherUnCours("c1").getSemestre().equals("s1"));
         Assert.isTrue(cc.afficherUnCours("c1").getDepartement().equals("informatique"));
-        Assert.isTrue(cc.afficherUnCours("c1").getVolumeHoraire()==40);
+        Assert.isTrue(cc.afficherUnCours("c1").getVolume()==40);
     }
 
     @Test
@@ -57,13 +57,13 @@ class CoursApplicationTests {
         c.setNom("machine");
         c.setSemestre("s1");
         c.setDepartement("mathématiques");
-        c.setVolumeHoraire(40);
+        c.setVolume(40);
         cc.ajouterModifierCours(c);
         Assert.isTrue(cc.afficherUnCours("c4").getIdenseignant().equals("e1"));
         Assert.isTrue(cc.afficherUnCours("c4").getNom().equals("machine"));
         Assert.isTrue(cc.afficherUnCours("c4").getSemestre().equals("s1"));
         Assert.isTrue(cc.afficherUnCours("c4").getDepartement().equals("mathématiques"));
-        Assert.isTrue(cc.afficherUnCours("c4").getVolumeHoraire()==40);
+        Assert.isTrue(cc.afficherUnCours("c4").getVolume()==40);
 
     }
 
