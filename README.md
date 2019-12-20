@@ -9,7 +9,7 @@ Le projet  gére la scolarité(enseignant et cours) avec des microservices pour 
   
     - Taper  => mvn package
     - Tapez => docker run -p 4000:8080 docker-enseignant:0.0.1-SNAPSHOT
-    - Tapez => docker run -p 9090:8080 docker-cours:0.0.1-SNAPSHOT
+    - Tapez => docker run -p 9191:8080 docker-cours:0.0.1-SNAPSHOT
   
   - ces commandes vont lancer les conteneurs docker on pourras accer aux microservices grace au lien suivant :
   -Sur Postman : en attendant que nous réalisons le client 
@@ -37,3 +37,4 @@ Le projet  gére la scolarité(enseignant et cours) avec des microservices pour 
         * type: DEL
      - http://localhost:4000/enseignants/ens1 : pour rechercher l'enseignant avec l'id "ens1"
         * type : GET
+- Pour COURS le "readme" est dans le fichier "readmi.txt" dans le projet
