@@ -10,8 +10,6 @@ public class Cours {
     @Column(name = "idcours")
     @Id
     private String idcours;
-    @Column(name = "idenseignant")
-    private String idenseignant;
     @Column(name = "nom")
     private String nom;
     @Column(name = "semestre")
@@ -22,9 +20,8 @@ public class Cours {
     @Column(name = "volume")
     private int volume;
 
-    public Cours(String idcours, String idenseignant, String nom, String semestre, String departement,  int volume) {
+    public Cours(String idcours, String nom, String semestre, String departement,  int volume) {
         this.idcours = idcours;
-        this.idenseignant = idenseignant;
         this.nom = nom;
         this.semestre = semestre;
         this.departement = departement;
@@ -41,14 +38,6 @@ public class Cours {
 
     public void setIdcours(String idcours) {
         this.idcours = idcours;
-    }
-
-    public String getIdenseignant() {
-        return idenseignant;
-    }
-
-    public void setIdenseignant(String idenseignant) {
-        this.idenseignant = idenseignant;
     }
 
     public String getNom() {
@@ -87,7 +76,6 @@ public class Cours {
     public String toString() {
         return "Cours{" +
                 "idcours='" + idcours + '\'' +
-                ", idenseignant='" + idenseignant + '\'' +
                 ", nom='" + nom + '\'' +
                 ", semestre='" + semestre + '\'' +
                 ", departement='" + departement + '\'' +
