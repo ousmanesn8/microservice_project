@@ -13,7 +13,6 @@ public class Enseignant {
     private  String statusEnseignant;
     private  String specialiteEnseignant;
 
-
     @Override
     public String toString() {
         return "Enseignant  : \n" +

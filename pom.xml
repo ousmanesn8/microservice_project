@@ -18,13 +18,8 @@
     <name>microservice_project</name>
     <description>Maven multi module project</description>
     <packaging>pom</packaging>
-
     <properties>
         <java.version>1.8</java.version>
         <derby.version>10.11.1.1</derby.version>
     </properties>
-
-    
-
-    
 </project>
