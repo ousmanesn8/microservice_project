@@ -2,49 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dbdeeaa-0b1c-432f-b821-74f4dbf66df2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/java/client/clientcoursenseignant/ClientCoursEnseignantApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/java/client/clientcoursenseignant/beans/CoursBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/java/client/clientcoursenseignant/configuration/assembly.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/java/client/clientcoursenseignant/controller/ClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/java/client/clientcoursenseignant/proxies/MicroserviceCoursProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/resources/templates/add-cours.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-cours-enseignant/src/test/java/client/clientcoursenseignant/ClientCoursEnseignantApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cours/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cours/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/Controller/CoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/Controller/CoursController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/CoursApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/CoursApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/Model/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/main/java/microservice/cours/Model/Cours.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/main/resources/schema-mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours/src/test/java/microservice/cours/CoursApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cours/src/test/java/microservice/cours/CoursApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/derby.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/Configuration/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/Configuration/assembly.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/MsGestionEnseignantApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/Service/EnseignantServiceJDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/Service/EnseignantServiceJDBCImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/model/Enseignant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/repository/EnseignantDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/repository/EnseignantDaoJDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/repository/EnseignantDaoJDBCImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/web/Controller/EnseignantController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/web/Controller/EnseignantControllerDerby.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/java/microservice/enseignant/ms_GestionEnseignant/web/Exception/EnseignantIntrouvableException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/main/resources/schema-mysql.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_GestionEnseignant/src/test/java/microservice/enseignant/ms_GestionEnseignant/MsGestionEnseignantApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/mydb/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/mydb/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enseignant/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/enseignant/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -166,6 +164,7 @@
       <workItem from="1576770933400" duration="2570000" />
       <workItem from="1578772076735" duration="5212000" />
       <workItem from="1578919910254" duration="1351000" />
+      <workItem from="1579096827244" duration="3324000" />
     </task>
     <servers />
   </component>

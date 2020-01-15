@@ -81,7 +81,7 @@
 					<version>1.4.3</version>
 					<executions>
 						<execution>
-							<id>default</id>
+							<id>enseignant</id>
 							<goals>
 								<goal>build</goal>
 							</goals>

@@ -17,7 +17,6 @@ class CoursApplicationTests {
     public void testListTousLesCours(){
         Cours c = new Cours();
         c.setIdcours("c1");
-        c.setIdenseignant("e1");
         c.setNom("qualite");
         c.setSemestre("s1");
         c.setDepartement("informatique");
@@ -30,7 +29,6 @@ class CoursApplicationTests {
     public void testAdd(){
         Cours c = new Cours();
         c.setIdcours("c4");
-        c.setIdenseignant("e1");
         c.setNom("machine learning");
         c.setSemestre("s1");
         c.setDepartement("informatique");
@@ -42,7 +40,6 @@ class CoursApplicationTests {
 
     @Test
     public void getUnCours(){
-        Assert.isTrue(cc.afficherUnCours("c1").getIdenseignant().equals("e1"));
         Assert.isTrue(cc.afficherUnCours("c1").getNom().equals("qualite"));
         Assert.isTrue(cc.afficherUnCours("c1").getSemestre().equals("s1"));
         Assert.isTrue(cc.afficherUnCours("c1").getDepartement().equals("informatique"));
@@ -53,13 +50,11 @@ class CoursApplicationTests {
     public void testModify(){
         Cours c = new Cours();
         c.setIdcours("c4");
-        c.setIdenseignant("e1");
         c.setNom("machine");
         c.setSemestre("s1");
         c.setDepartement("mathématiques");
         c.setVolume(40);
         cc.ajouterModifierCours(c);
-        Assert.isTrue(cc.afficherUnCours("c4").getIdenseignant().equals("e1"));
         Assert.isTrue(cc.afficherUnCours("c4").getNom().equals("machine"));
         Assert.isTrue(cc.afficherUnCours("c4").getSemestre().equals("s1"));
         Assert.isTrue(cc.afficherUnCours("c4").getDepartement().equals("mathématiques"));

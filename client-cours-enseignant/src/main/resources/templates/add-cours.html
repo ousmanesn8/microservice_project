@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="row" style="margin-left:10%">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        Formulaire d'ajout de cours
+    </div>
+</div>
+<div class="row" style="margin-left:10%; margin-top:1%">
+<form action="#" th:action="@{/addcours}" th:object="${cours}" method="post">
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <label for="idcours">IDCours</label>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" id="idcours" name="idcours" placeholder="IDCours">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <label for="nom">Nom</label>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" name="nom" id="nom" placeholder="Nom">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <label for="semestre">Semestre</label>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" name="semestre" id="semestre" placeholder="Semestre">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <label for="departement">Departement</label>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" name="departement" id="departement" placeholder="Departement">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <label for="volume">Volume</label>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" name="volume" id="volume" placeholder="Volume">
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="submit" value="Add Cours">
+        </div>
+
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
