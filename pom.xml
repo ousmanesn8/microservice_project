@@ -35,7 +35,7 @@
             <executions>
                 <execution>
                     <id>up</id>
-                    <phase>package</phase>
+                    <phase>deploy</phase>
                     <goals>
                         <goal>up</goal>
                     </goals>

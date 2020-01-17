@@ -37,9 +37,37 @@
             </tbody>
         </table>
     </div>
-    <p><a th:href="@{add-cours}">Ajouter un cours</a></p>
+    <p><a th:href="@{add-cours}">Ajouter Cours</a></p>
 </div>
-
+<div th:switch="${enseignant}">
+    <h2 th:case="null">Pas d'enseignant dans la base de données</h2>
+    <div th:case="*">
+        <h2>Enseignant</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>IdEnseignant</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>status</th>
+                <th>Specialite</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ens : ${enseignant}">
+                <td th:text="${ens.idEnseignant}"></td>
+                <td th:text="${ens.nomEnseignant}"></td>
+                <td th:text="${ens.prenomEnseignant}"></td>
+                <td th:text="${ens.statusEnseignant}"></td>
+                <td th:text="${ens.specialiteEnseignant}"></td>
+                <!--td><a th:href="@{/edit/{id}(id=${ens.idEnseignant})}">update</a></td-->
+                <td><a th:href="@{/delete/{id}(id=${ens.idEnseignant})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a th:href="@{add-ens}">Ajouter Enseignant</a></p>
+</div>
 <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
 
 </body>
