@@ -1,0 +1,12 @@
+enseignantContainer:
+    image: docker-enseignant:0.0.1-SNAPSHOT
+    ports:
+      - "9091:8080"
+coursContainer:
+    image: docker-cours:0.0.1-SNAPSHOT
+    ports:
+      - "9090:9090"
+ClientContainer:
+  image: docker-client-cours-enseignant:0.0.1-SNAPSHOT
+  ports:
+    - "9092:8080"

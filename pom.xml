@@ -19,13 +19,38 @@
     <name>microservice_project</name>
     <description>Maven multi module project</description>
     <packaging>pom</packaging>
-
+	<dependencies>
+        <dependency>
+            <groupId>com.dkanejs.maven.plugins</groupId>
+            <artifactId>docker-compose-maven-plugin</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+    </dependencies>
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>com.dkanejs.maven.plugins</groupId>
+            <artifactId>docker-compose-maven-plugin</artifactId>
+            <version>2.5.1</version>
+            <executions>
+                <execution>
+                    <id>up</id>
+                    <phase>deploy</phase>
+                    <goals>
+                        <goal>up</goal>
+                    </goals>
+                    <configuration>
+                        <composeFile>docker-compose.yml</composeFile>
+                        <ignorePullFailures>true</ignorePullFailures>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+	
     <properties>
         <java.version>1.8</java.version>
         <derby.version>10.11.1.1</derby.version>
     </properties>
-
-    
-
-    
 </project>
