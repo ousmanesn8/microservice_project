@@ -32,16 +32,14 @@
                 <td th:text="${c.departement}"></td>
                 <td th:text="${c.volume}"></td>
                 <td><a th:href="@{/edit/{id}(id=${c.idcours})}">Edit</a></td>
-                <td><a th:href="@{/delete/{id}(id=${c.idcours})}">Delete</a></td>
+                <td><a th:href="@{/deleteCours/{id}(id=${c.idcours})}">Delete</a></td>
             </tr>
             </tbody>
         </table>
     </div>
-<<<<<<< HEAD
     <p><a th:href="@{add-cours}">Ajouter un cours</a></p>
 </div>
 
-=======
     <p><a th:href="@{add-cours}">Ajouter Cours</a></p>
 </div>
 <div th:switch="${enseignant}">
@@ -66,14 +64,13 @@
                 <td th:text="${ens.statusEnseignant}"></td>
                 <td th:text="${ens.specialiteEnseignant}"></td>
                 <!--td><a th:href="@{/edit/{id}(id=${ens.idEnseignant})}">update</a></td-->
-                <td><a th:href="@{/delete/{id}(id=${ens.idEnseignant})}">Delete</a></td>
+                <td><a th:href="@{/enseignants/delete/{id}(id=${ens.idEnseignant})}">Delete</a></td>
             </tr>
             </tbody>
         </table>
     </div>
     <p><a th:href="@{add-ens}">Ajouter Enseignant</a></p>
 </div>
->>>>>>> 41e797b21f3ad40238bb715bc96fbf28dcf47276
 <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
 
 </body>

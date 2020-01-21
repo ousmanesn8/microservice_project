@@ -15,7 +15,6 @@ import java.util.Optional;
 
 @Api(description = "Microservice de gestion des enseignants")
 @RestController
-@RequestMapping("/enseignants")
 public class EnseignantController {
 
     @Autowired
@@ -23,7 +22,7 @@ public class EnseignantController {
 
     //Afficher tout les enseignants
     @ApiOperation(value = "Affiche tout les enseignants")
-    @GetMapping(value = "")
+    @GetMapping(value = "/enseignants")
     public List<Enseignant> listEnseignants() {
         return enseignantDao.findAll();
     }
@@ -31,7 +30,7 @@ public class EnseignantController {
     //--------------------------------------------------------------------------------------------
     //Récupérer un enseignant par son Id
     @ApiOperation(value = "Recupère le id d'un enseignant et affiche l'enseignant correspondant")
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "enseignant/{id}")
     public Enseignant afficherUnEnseignant(@PathVariable String id) throws EnseignantIntrouvableException {
         Optional<Enseignant> c = enseignantDao.findById(id);
         if (c == null)
@@ -41,7 +40,7 @@ public class EnseignantController {
 
     //--------------------------------------------------------------------------------------µ
     @ApiOperation(value = "Supprimer un enseignant")
-    @DeleteMapping(value = "/delete/{idEnseignant}")
+    @DeleteMapping(value = "/deleteEnseignant/{idEnseignant}")
     public List<Enseignant> deleteEnseignant(@PathVariable("idEnseignant") String id) {
         enseignantDao.deleteById(id);
         return enseignantDao.findAll();
@@ -49,7 +48,7 @@ public class EnseignantController {
 
     //--------------------------------------------------------------------------------------------
     @ApiOperation(value = "Mise à jours des info sur un enseignant")
-    @PutMapping(value = "/update/{idEnseignant}")
+    @PutMapping(value = "/updateEnseignant/{idEnseignant}")
     public Enseignant updateEnseignant(@PathVariable("idEnseignant") String idEns, @RequestBody Enseignant enseignant) {
         Optional<Enseignant> enseignant1 = enseignantDao.findById(idEns);
         System.out.println("------------\n" + enseignant1 + "\n");
@@ -63,7 +62,7 @@ public class EnseignantController {
 
     //--------------------------------------------------------------------------------------------
     @ApiOperation(value = "Ajouter un enseignant")
-    @PostMapping("/add")
+    @PostMapping("/addEnseignant")
     public Enseignant addEnseigant(@RequestBody Enseignant enseignant) {
         return enseignantDao.save(enseignant);
     }

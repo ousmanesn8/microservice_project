@@ -18,36 +18,6 @@ import java.util.List;
 @Controller
 public class EnseignantController {
 
-    @Autowired
-    private MicroserviceEnseignantproxy microserviceEnseignantproxy;
 
-    @RequestMapping("/")
-    public String accueil(Model model){
-        List<EnseignantBean> enseignantBeanList =  microserviceEnseignantproxy.listEnseignants();
-        model.addAttribute("enseignant", enseignantBeanList);
-        return "index";
-    }
-
-    @PostMapping("/add")
-    public String addUser(@Valid EnseignantBean enseignantBean, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return "add-ens";
-        }
-        microserviceEnseignantproxy.addEnseigant(enseignantBean);
-        model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
-        return "index";
-    }
-
-    @RequestMapping("/add-ens")
-    public String addenseignant(){
-        return "add-ens";
-    }
-
-    @GetMapping("/delete/{id}")
-    public RedirectView deleteUser(@PathVariable("id") String id, Model model) {
-        microserviceEnseignantproxy.deleteEnseignant(id);
-        model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
-        return new RedirectView("index");
-    }
 
 }

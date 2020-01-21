@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "enseignantContainer", url = "http://localhost:9091")
+@FeignClient(name = "microservice-enseignant", url = "http://localhost:9091")
 public interface MicroserviceEnseignantproxy {
 
-    @GetMapping(value = "/enseignant")
+    @GetMapping(value = "/enseignants")
     List<EnseignantBean> listEnseignants();
 
     @GetMapping( value = "/enseignant/{id}")
     EnseignantBean afficherUnEnseignant(@PathVariable("id") int id);
 
-    @PostMapping(value = "/addOrModifyCours", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/updateEnseignant", consumes = MediaType.APPLICATION_JSON_VALUE)
     public EnseignantBean updateEnseignant(@RequestBody EnseignantBean coursBean);
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/addEnseignant")
     public EnseignantBean addEnseigant(@RequestBody EnseignantBean enseignantBean);
 
-    @DeleteMapping(value = "deleteCours/{id}")
+    @DeleteMapping(value = "/deleteEnseignant/{id}")
     public void deleteEnseignant(@PathVariable String id);
 }
