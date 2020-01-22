@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div th:switch="${cours}">
+    <h2 th:case="null">Pas de cours dans la base de données</h2>
+    <div th:case="*">
+        <h2>Cours</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>IDCours</th>
+                <th>Nom</th>
+                <th>Semestre</th>
+                <th>Departement</th>
+                <th>Volume</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${cours}">
+                <td th:text="${c.idcours}"></td>
+                <td th:text="${c.nom}"></td>
+                <td th:text="${c.semestre}"></td>
+                <td th:text="${c.departement}"></td>
+                <td th:text="${c.volume}"></td>
+                <td><a th:href="@{/deleteCours/{id}(id=${c.idcours})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a th:href="@{add-cours}">Ajouter un cours</a></p>
+</div>
+
+<p><a th:href="@{/}">Index</a></p>
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

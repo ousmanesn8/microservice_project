@@ -25,33 +25,34 @@ public class ClientController {
 
     @RequestMapping("/")
     public String accueil(Model model){
-        List<EnseignantBean> enseignantBeanList =  microserviceEnseignantproxy.listEnseignants();
-        model.addAttribute("enseignant", enseignantBeanList);
-        List<CoursBean> cours =  coursProxy.listeDesCours();
-        model.addAttribute("cours", cours);
         return "index";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addenseignant")
     public String addUser(@Valid EnseignantBean enseignantBean, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-ens";
         }
         microserviceEnseignantproxy.addEnseigant(enseignantBean);
         model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
-        return "index";
+        return "list-enseignant";
     }
 
     @RequestMapping("/add-ens")
     public String addenseignant(){
-        return "add-ens";
+        return "add-enseignant";
+    }
+
+    @RequestMapping("/list-ens")
+    public String listens(){
+        return "list-enseignant";
     }
 
     @GetMapping("/deleteEnseignant/{id}")
-    public RedirectView deleteEnseignant(@PathVariable("id") String id, Model model) {
+    public String deleteEnseignant(@PathVariable("id") String id, Model model) {
         microserviceEnseignantproxy.deleteEnseignant(id);
         model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
-        return new RedirectView("index");
+        return "list-enseignant";
     }
 
     @Autowired
@@ -64,7 +65,7 @@ public class ClientController {
         }
         coursProxy.ajouterModifierCours(coursBean);
         model.addAttribute("cours", coursProxy.listeDesCours());
-        return "index";
+        return "list-cours";
     }
 
     @RequestMapping("/add-cours")
@@ -72,11 +73,16 @@ public class ClientController {
         return "add-cours";
     }
 
+    @RequestMapping("/list-cours")
+    public String listcours(){
+        return "list-cours";
+    }
+
     @GetMapping("/deleteCours/{id}")
-    public RedirectView deleteCours(@PathVariable("id") String id, Model model) {
+    public String deleteCours(@PathVariable("id") String id, Model model) {
         coursProxy.supprimerCours(id);
         model.addAttribute("cours", coursProxy.listeDesCours());
-        return new RedirectView("index");
+        return "list-cours";
     }
 
 }

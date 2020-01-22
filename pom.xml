@@ -6,6 +6,7 @@
         <module>enseignant</module>
 	<module>cours</module>
 	<module>client-cours-enseignant</module>
+	<module>discovery</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
