@@ -1,27 +1,66 @@
-version: '2'
+version: '3'
 services:
   eureka-server:
     image: docker-discovery:0.0.1-SNAPSHOT
-    expose:
-    - "8761"
+    container_name: eurekacontainer
+    ports:
+    - 8761:8761
+    networks:
+    - micro-network
+    volumes:
+    - micro-volume:/chargement
+    hostname: eureka
   client:
     image: docker-client-cours-enseignant:0.0.1-SNAPSHOT
-    container_name: client-cours-enseignant
-    ports:
-    - "8282:8080"
+    container_name: clientcoursenseignant
     environment:
-      server.port: 8080
-      eureka.client.enabled: 'true'
-      eureka.host: eureka-server
-      eureka.instance.preferIpAddress: 'true'
+    - JAVA_OPTS=
+      - DEUREKA_SERVER=http:eurekacontainer:8761/eureka
+      - Dspring.profiles.active=production
+    restart: on-failure
+    depends_on:
+    - eureka-server
+    ports:
+    - 9092:9092
+    networks:
+    - micro-network
+    volumes:
+    - micro-volume:/chargement
+    links:
+    - eureka-server
   cours:
     image: docker-cours:0.0.1-SNAPSHOT
-    container_name: cours-container
-    ports:
-    - "8383:8080"
+    container_name: courscontainer
     environment:
-      server.port: 8080
-      eureka.client.enabled: 'true'
-      eureka.host: eureka-server
-      eureka.instance.preferIpAddress: 'true'
-
+    - JAVA_OPTS=
+      - DEUREKA_SERVER=http://eurekacontainer:8761/eureka
+    depends_on:
+    - eureka-server
+    ports:
+    - 9090:9090
+    networks:
+    - micro-network
+    volumes:
+    - micro-volume:/chargement
+    links:
+    - eureka-server
+  enseignant:
+    image: docker-enseignant:0.0.1-SNAPSHOT
+    container_name: enseignantcontainer
+    environment:
+    - JAVA_OPTS=
+      - DEUREKA_SERVER=http://eurekacontainer:8761/eureka
+    depends_on:
+    - eureka-server
+    ports:
+    - 9091:9091
+    networks:
+    - micro-network
+    volumes:
+    - micro-volume:/chargement
+    links:
+    - eureka-server
+networks:
+  micro-network:
+volumes:
+  micro-volume:

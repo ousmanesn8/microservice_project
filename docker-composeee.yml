@@ -1,0 +1,27 @@
+version: '2'
+services:
+  eureka-server:
+    image: docker-discovery:0.0.1-SNAPSHOT
+    expose:
+    - "8761"
+  client:
+    image: docker-client-cours-enseignant:0.0.1-SNAPSHOT
+    container_name: client-cours-enseignant
+    ports:
+    - "9092:9092"
+    environment:
+      server.port: 8761
+      eureka.client.enabled: 'true'
+      eureka.host: eureka-server
+      eureka.instance.preferIpAddress: 'true'
+  cours:
+    image: docker-cours:0.0.1-SNAPSHOT
+    container_name: cours-container
+    ports:
+    - "9090:9090"
+    environment:
+      server.port: 8761
+      eureka.client.enabled: 'true'
+      eureka.host: eureka-server
+      eureka.instance.preferIpAddress: 'true'
+

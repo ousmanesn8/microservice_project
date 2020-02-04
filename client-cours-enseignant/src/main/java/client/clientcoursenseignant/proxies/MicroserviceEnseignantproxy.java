@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-enseignant")
+@FeignClient(name = "microservice-enseignant", url="enseignantcontainer:9091")
 public interface MicroserviceEnseignantproxy {
 
     @GetMapping(value = "/enseignants")

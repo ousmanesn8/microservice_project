@@ -67,5 +67,4 @@ class CoursApplicationTests {
         cc.supprimerCours("c4");
         Assert.isTrue(cc.listCours().size()==1);
     }
-
 }
