@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="row" style="margin-left:10%">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        Formulaire d'affectation de cours à un enseignant
+    </div>
+</div>
+<div class="row" style="margin-left:10%; margin-top:1%">
+    <form action="#" th:action="@{/addcoursenseignant}" th:object="${coursEnseignant}" method="post">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label for="idcours">IDCours</label>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input type="text" id="idcours" name="idcours" placeholder="IDCours">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label for="idEnseignant">IDEnseignant</label>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input type="text" name="idEnseignant" id="idEnseignant" placeholder="IDEnseignant">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input type="submit" value="Affecter">
+            </div>
+
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

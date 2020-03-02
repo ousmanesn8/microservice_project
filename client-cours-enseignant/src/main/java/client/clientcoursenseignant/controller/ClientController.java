@@ -1,10 +1,14 @@
 package client.clientcoursenseignant.controller;
 
 import client.clientcoursenseignant.beans.CoursBean;
+import client.clientcoursenseignant.beans.CoursEnseignantBean;
 import client.clientcoursenseignant.beans.EnseignantBean;
+import client.clientcoursenseignant.proxies.MicroserviceCoursEnseignantProxy;
 import client.clientcoursenseignant.proxies.MicroserviceCoursProxy;
 import client.clientcoursenseignant.proxies.MicroserviceEnseignantproxy;
+import org.bouncycastle.math.raw.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +26,9 @@ public class ClientController {
 
     @Autowired
     private MicroserviceEnseignantproxy microserviceEnseignantproxy;
+
+    @RequestMapping("/coursenseignant")
+    public String messages(){ return "index-message"; }
 
     @RequestMapping("/")
     public String accueil(Model model){
@@ -44,7 +51,8 @@ public class ClientController {
     }
 
     @RequestMapping("/list-ens")
-    public String listens(){
+    public String listens(Model model){
+        model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
         return "list-enseignant";
     }
 
@@ -74,7 +82,8 @@ public class ClientController {
     }
 
     @RequestMapping("/list-cours")
-    public String listcours(){
+    public String listcours(Model model){
+        model.addAttribute("cours", coursProxy.listeDesCours());
         return "list-cours";
     }
 
@@ -85,4 +94,34 @@ public class ClientController {
         return "list-cours";
     }
 
+    @Autowired
+    private MicroserviceCoursEnseignantProxy microserviceCoursEnseignantProxy;
+
+    @RequestMapping("/add-cours-enseignant")
+    public String addcoursenseignant(){
+        return "add-cours-enseignant";
+    }
+
+    @RequestMapping("/list-cours-enseignant")
+    public String listcoursenseignant(Model model){
+        model.addAttribute("affecter", microserviceCoursEnseignantProxy.listCoursenseignant());
+        return "list-cours-enseignant";
+    }
+
+    @PostMapping(value = "/addcoursenseignant")
+    public String addcoursenseignant(@Valid CoursEnseignantBean coursEnseignantBean, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "add-cours-enseignant";
+        }
+        microserviceCoursEnseignantProxy.affecterCoursEnseignant(coursEnseignantBean);
+        model.addAttribute("affecter", microserviceCoursEnseignantProxy.listCoursenseignant());
+        return "list-cours-enseignant";
+    }
+
+    @GetMapping("/deleteAffectation/{id}")
+    public String deleteAffectation(@PathVariable("id") String id, Model model) {
+        microserviceCoursEnseignantProxy.supprimerAffectation( Integer.valueOf(id));
+        model.addAttribute("affecter", microserviceCoursEnseignantProxy.listCoursenseignant());
+        return "list-cours-enseignant";
+    }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div th:switch="${affecter}">
+    <h2 th:case="null">Pas d'affectation dans la base de données</h2>
+    <div th:case="*">
+        <h2>Affectation</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>IDCours</th>
+                <th>IDEnseignant</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${affecter}">
+                <td th:text="${c.idcours}"></td>
+                <td th:text="${c.idEnseignant}"></td>
+                <td><a th:href="@{/deleteAffectation/{id}(id=${c.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a th:href="@{add-cours-enseignant}">Affecter un cours à un enseignant</a></p>
+</div>
+
+<p><a th:href="@{/}">Index</a></p>
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
