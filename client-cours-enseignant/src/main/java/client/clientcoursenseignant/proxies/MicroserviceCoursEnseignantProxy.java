@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-cours-enseignant", url = "localhost:9095")
+@FeignClient(name = "microservice-cours-enseignant", url = "localhost:9092")
 public interface MicroserviceCoursEnseignantProxy {
 
     @PostMapping(value = "/addcoursenseignant", consumes = MediaType.APPLICATION_JSON_VALUE)
