@@ -18,5 +18,5 @@ public interface MicroserviceCoursEnseignantProxy {
     public List<CoursEnseignantBean> listCoursenseignant();
 
     @DeleteMapping(value = "deleteAffectation/{id}")
-    public void supprimerAffectation(@PathVariable int id);
+    public void supprimerAffectation(@PathVariable String id);
 }

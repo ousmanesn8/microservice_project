@@ -120,7 +120,7 @@ public class ClientController {
 
     @GetMapping("/deleteAffectation/{id}")
     public String deleteAffectation(@PathVariable("id") String id, Model model) {
-        microserviceCoursEnseignantProxy.supprimerAffectation( Integer.parseInt(id));
+        microserviceCoursEnseignantProxy.supprimerAffectation(id);
         model.addAttribute("affecter", microserviceCoursEnseignantProxy.listCoursenseignant());
         return "list-cours-enseignant";
     }

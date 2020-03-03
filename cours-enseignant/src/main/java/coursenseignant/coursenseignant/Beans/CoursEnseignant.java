@@ -4,11 +4,22 @@ import javax.persistence.*;
 
 @Entity
 public class CoursEnseignant {
+
+    //@GeneratedValue(strategy=GenerationType.AUTO)
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private String id;
     private String idcours;
     private String idEnseignant;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     public CoursEnseignant() {
     }

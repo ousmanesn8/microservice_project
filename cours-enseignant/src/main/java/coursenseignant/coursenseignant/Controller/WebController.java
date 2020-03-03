@@ -4,6 +4,7 @@ import coursenseignant.coursenseignant.Beans.CoursEnseignant;
 import coursenseignant.coursenseignant.Chargement.Load;
 import coursenseignant.coursenseignant.DAO.CoursEnseignantDao;
 import net.minidev.json.parser.ParseException;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -35,8 +36,9 @@ public class WebController {
     public CoursEnseignant affecterCoursEnseignant(@RequestBody CoursEnseignant coursEnseignant) throws IOException, ParseException {
         if(load.loadCours().contains(coursEnseignant.getIdcours()) && load.loadEnseignant()
         .contains(coursEnseignant.getIdEnseignant())){
+            String key= RandomStringUtils.randomAlphanumeric(10);
+            coursEnseignant.setId(key);
             coursEnseignantDao.save(coursEnseignant);
-
         }
         return coursEnseignant;
     }
@@ -44,7 +46,7 @@ public class WebController {
     public List<CoursEnseignant> listCoursenseignant(){return coursEnseignantDao.findAll();}
 
     @DeleteMapping(value = "deleteAffectation/{id}")
-    public void supprimerAffectation(@PathVariable int id){
+    public void supprimerAffectation(@PathVariable String id){
         coursEnseignantDao.deleteById(id);
     }
 }

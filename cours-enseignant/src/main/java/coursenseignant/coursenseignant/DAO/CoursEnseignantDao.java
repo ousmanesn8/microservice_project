@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface CoursEnseignantDao extends JpaRepository<CoursEnseignant, Integer> {
+public interface CoursEnseignantDao extends JpaRepository<CoursEnseignant, String> {
 
 }
