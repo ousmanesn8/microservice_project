@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cours-enseignant" />
+        <module name="discovery" />
         <module name="client-cours-enseignant" />
         <module name="cours" />
         <module name="ms_GestionEnseignant" />
@@ -14,6 +16,8 @@
     <bytecodeTargetLevel>
       <module name="client-cours-enseignant" target="1.8" />
       <module name="cours" target="1.8" />
+      <module name="cours-enseignant" target="1.8" />
+      <module name="discovery" target="1.8" />
       <module name="enseignant" target="1.8" />
       <module name="microservice_project" target="1.8" />
       <module name="ms_GestionEnseignant" target="1.8" />
@@ -23,6 +27,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="client-cours-enseignant" options="-parameters" />
       <module name="cours" options="-parameters" />
+      <module name="cours-enseignant" options="-parameters" />
+      <module name="discovery" options="-parameters" />
       <module name="enseignant" options="-parameters" />
       <module name="microservice_project" options="-parameters" />
       <module name="ms_GestionEnseignant" options="-parameters" />

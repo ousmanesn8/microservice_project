@@ -47,5 +47,4 @@ public class WebController {
     public void supprimerAffectation(@PathVariable int id){
         coursEnseignantDao.deleteById(id);
     }
-
 }

@@ -27,7 +27,7 @@ import java.util.Scanner;
 public class Load {
 
     public List<String> loadCours() throws IOException, ParseException {
-        URL url = new URL("http://localhost:9090/cours");
+        URL url = new URL("http://courscontainer:9090/cours");
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestMethod("GET");
         conn.connect();
@@ -66,7 +66,7 @@ public class Load {
     }
 
     public List<String> loadEnseignant() throws IOException, ParseException {
-        URL url = new URL("http://localhost:9091/enseignants");
+        URL url = new URL("http://enseignantcontainer:9091/enseignants");
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestMethod("GET");
         conn.connect();
@@ -99,10 +99,6 @@ public class Load {
                 idsenseignants.add((String) jsonObject.get("idEnseignant"));
             }
             return idsenseignants;
-
         }
-
     }
-
-
     }
