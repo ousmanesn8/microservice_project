@@ -60,7 +60,7 @@ public class ClientController {
     public String deleteEnseignant(@PathVariable("id") String id, Model model) {
         microserviceEnseignantproxy.deleteEnseignant(id);
         model.addAttribute("enseignant", microserviceEnseignantproxy.listEnseignants());
-        return "list-enseignant";
+        return "redirect:/list-ens";
     }
 
     @Autowired
@@ -91,7 +91,7 @@ public class ClientController {
     public String deleteCours(@PathVariable("id") String id, Model model) {
         coursProxy.supprimerCours(id);
         model.addAttribute("cours", coursProxy.listeDesCours());
-        return "list-cours";
+        return "redirect:/list-cours";
     }
 
     @Autowired
@@ -122,6 +122,6 @@ public class ClientController {
     public String deleteAffectation(@PathVariable("id") String id, Model model) {
         microserviceCoursEnseignantProxy.supprimerAffectation(id);
         model.addAttribute("affecter", microserviceCoursEnseignantProxy.listCoursenseignant());
-        return "list-cours-enseignant";
+        return "redirect:/list-cours-enseignant";
     }
 }
