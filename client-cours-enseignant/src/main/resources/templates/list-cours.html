@@ -2,44 +2,87 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+    <title>Microservice Client</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" /-->
+
 </head>
 <body>
-
-<div th:switch="${cours}">
-    <h2 th:case="null">Pas de cours dans la base de données</h2>
-    <div th:case="*">
-        <h2>Cours</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>IDCours</th>
-                <th>Nom</th>
-                <th>Semestre</th>
-                <th>Departement</th>
-                <th>Volume</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="c : ${cours}">
-                <td th:text="${c.idcours}"></td>
-                <td th:text="${c.nom}"></td>
-                <td th:text="${c.semestre}"></td>
-                <td th:text="${c.departement}"></td>
-                <td th:text="${c.volume}"></td>
-                <td><a th:href="@{/deleteCours/{id}(id=${c.idcours})}">Delete</a></td>
-            </tr>
-            </tbody>
-        </table>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a th:href="@{/}">Acceuil</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cours
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{list-cours}">Liste des Cours</a></li>
+                    <li><a th:href="@{add-cours}">Ajouter un Cours</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Enseignant
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{list-ens}">Liste des Enseignant</a></li>
+                    <li><a th:href="@{add-ens}">Ajouter un Enseignant</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Affectation
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{list-cours-enseignant}">Liste des Affections</a></li>
+                    <li><a th:href="@{add-cours-enseignant}">Faire une Affectation</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <p><a th:href="@{add-cours}">Ajouter un cours</a></p>
+</nav>
+
+<div class="container">
+   
+    <div th:switch="${cours}">
+        <h2 th:case="null">Pas de cours dans la base de données</h2>
+        <div th:case="*">
+            <p>Liste Des Cours Enregistrés:</p>
+            <div th:switch="${cours}">
+                <h2 th:case="null">Pas de cours dans la base de données</h2>
+                <div th:case="*">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>IDCours</th>
+                            <th>Nom</th>
+                            <th>Semestre</th>
+                            <th>Departement</th>
+                            <th>Volume</th>
+                            <th>...</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="c : ${cours}">
+                            <td th:text="${c.idcours}"></td>
+                            <td th:text="${c.nom}"></td>
+                            <td th:text="${c.semestre}"></td>
+                            <td th:text="${c.departement}"></td>
+                            <td th:text="${c.volume}"></td>
+                            <td><a th:href="@{/deleteCours/{id}(id=${c.idcours})}">Delete</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
 </div>
-
-<p><a th:href="@{/}">Index</a></p>
-
-<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
