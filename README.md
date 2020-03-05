@@ -11,4 +11,4 @@ Le projet  gére la scolarité(enseignant et cours) avec des microservices pour 
     - >mvn package
     - > docker-compose up
 - Pour acceder au client qui appele les deux services, il faut aller à l'URL suivant :
-  - http://localhost:9092/ 
+  - http://localhost:9093/ 
