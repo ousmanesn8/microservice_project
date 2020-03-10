@@ -34,10 +34,11 @@ Le projet  gére la scolarité(enseignant et cours) avec des microservices pour 
   
 ### Microservice Discovery : 
 - "Serveur eureka" : pour permettre aux applications de s’enregistrer pour qu’elles se voient mutuellement. 
-
+![image2](https://github.com/ousmanesn8/Myimages/blob/master/Capture%20du%202020-03-11%2000-18-58.png)
 ### Client REST
 - communique avec les microservices cours, enseignant et cours-enseignant
 - interface d'acceuil
+![image2](https://github.com/ousmanesn8/Myimages/blob/master/Capture%20du%202020-03-11%2000-34-33.png)
 ## Execution :
    - > se postionner sur le projet parent 
    - > mvn package
