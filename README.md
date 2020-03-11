@@ -2,10 +2,9 @@
 Le projet  gére la scolarité(enseignant et cours) avec des microservices pour chaque entité, nous avons utilisé: 
 ## Outils : 
   - Maven 
-  - Spring Boot (jpa, maven)
+  - Spring Boot
   - Docker : pour le déploiement sur des conteneurs
   - Api REST
-  - Spring Boot
   - Derby
   - Feign
   - Eureka
@@ -23,7 +22,7 @@ Le projet  gére la scolarité(enseignant et cours) avec des microservices pour 
 - Cours et Enseignant
   - opération CRUD
   - Maven multimodule
-  - dependance "docker spotify" :  pour la gestion et exploitation de l'image plors du packaging 
+  - dependance "docker spotify" :  pour la gestion et exploitation de l'image lors du packaging 
   - fichier xml "assembly" pour l'assemblage du pojet
   - dockerfile : pour la generation de l'image 
   - enrégistrement au serveur eureka
